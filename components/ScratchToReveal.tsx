@@ -114,7 +114,7 @@ export const ScratchToRevealDemo = () => {
         width={250}
         height={250}
         minScratchPercentage={70}
-        className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gradient-to-r from-pink-300 to-yellow-200 shadow-md"
+        className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gradient-to-r from-pink-300 to-yellow-200 shadow-md "
         onComplete={handleComplete}
         gradientColors={['#FAD02C', '#FF6F61', '#D4A5A5']}
       >
