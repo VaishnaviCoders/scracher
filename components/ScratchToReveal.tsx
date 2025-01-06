@@ -60,7 +60,7 @@ export const ScratchToRevealDemo = () => {
     "i love the way you make me feel like i'm a part of you",
     'If kisses were snowflakes, I’d send you a blizzard 🌨️💋.',
     'You’re the reason I check my phone so often – it’s like a love lottery every time! 📱💖',
-    "I love you more than pizza... and that's saying a lot 🍕❤️!",
+    "I love you more than pizza... and that's saying a lot (aila pilly mala athavl tu ksa undra srakha pizza khat hoti dominoes madhe Lol 😘😘 )🍕❤️!",
   ];
 
   const getRandom = (array: any) =>
@@ -85,7 +85,7 @@ export const ScratchToRevealDemo = () => {
     setTimeout(() => {
       setIsImageVisible(false); // Hide image after 1 second
       setCurrentMessage(getRandom(loveMessages)); // Show new message
-    }, 1000);
+    }, 2000);
 
     // Reset the component (key) after displaying the message
     setTimeout(() => {
@@ -96,12 +96,12 @@ export const ScratchToRevealDemo = () => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-6">
-      <h2 className="text-xl font-extrabold text-center text-indigo-600">
-        Scratch to Reveal Your Special Message 💌
-      </h2>
+    <div className="flex flex-col justify-center items-center space-y-6 h-full">
       <div className="text-center font-medium text-gray-700">
-        <p>Maza chodusa pyara , Pilly </p>
+        <p>
+          Maza chodusa pyara ,{' '}
+          <span className="text-red-500 font-medium"> Pilly</span>{' '}
+        </p>
         <p>
           I&apos;m building this application for you &quot;You are my
           forever&quot; 💘.
