@@ -3,67 +3,96 @@
 import React, { useState } from 'react';
 import ScratchToReveal from './ui/scratch-to-reveal';
 import confetti from 'canvas-confetti';
+import image1 from '@/images/IMG-20241111-WA0098.jpg';
+import image2 from '@/images/IMG-20241111-WA0100.jpg';
+import image3 from '@/images/IMG-20241111-WA0101.jpg';
+import image4 from '@/images/IMG-20241111-WA0105.jpg';
+import image5 from '@/images/IMG-20241111-WA0109.jpg';
+import image6 from '@/images/IMG-20241111-WA0113.jpg';
+import image7 from '@/images/IMG-20241111-WA0114.jpg';
+import image8 from '@/images/IMG-20241111-WA0115.jpg';
+import image9 from '@/images/IMG-20241111-WA0116.jpg';
+import image10 from '@/images/IMG-20241118-WA0117.jpg';
+import image11 from '@/images/IMG-20241118-WA0118.jpg';
+import image12 from '@/images/IMG-20241118-WA0119.jpg';
+import image13 from '@/images/IMG-20241118-WA0123.jpg';
+import image14 from '@/images/IMG-20241204-WA0010.jpg';
+import image15 from '@/images/IMG-20241221-WA0004.jpg';
+import image16 from '@/images/IMG-20241223-WA0038.jpg';
+import image17 from '@/images/IMG-20241230-WA0017.jpg';
+import image18 from '@/images/IMG-20241230-WA0018.jpg';
+
+import Image from 'next/image';
 
 export const ScratchToRevealDemo = () => {
-  const loveEmojis = [
-    '💖',
-    '❤️',
-    '😍',
-    '😘',
-    '🥰',
-    '💌',
-    '🌹',
-    '💋',
-    '💘',
-    '💓',
+  // Array of image URLs (replace with your actual image paths)
+  const loveImages = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+    image10,
+    image11,
+    image12,
+    image13,
+    image14,
+    image15,
+    image16,
+    image17,
+    image18,
   ];
 
-  const loveMessages: string[] = [
-    'You&apos;re the melody to my Chotusa heart&apos;s song 🎶.',
+  const loveMessages = [
+    "You're the melody to my Chotusa heart’s song.",
     'Every moment with you feels like magic like shaka la ka boom boom ✨.',
-    'You&apos;re the peanut butter to my jelly 🍞🍇. Without you, I&apos;m incomplete! ❤️',
-    'I&apos;m not a photographer, but I can totally picture us together forever 😘.',
-    'I&apos;d be lost without you, probably on Google Maps, but still lost 😅. You&apos;re my GPS! 💖',
-    'If I had a star for every time you made me smile, I&apos;d have a galaxy by now ✨.',
-    'You must be made of copper and tellurium because you&apos;re Cu-Te! 😏💘',
-    'I&apos;m not a mathematician, but our love adds up perfectly 🔢❤️.',
-    'Even my dog loves you more than me, and that&apos;s saying something 🐶💓.',
-    'You had me at &apos;hello&apos;... and then I stayed for the pizza 🍕💘.',
-    'If kisses were snowflakes, I&apos;d send you a blizzard 🌨️💋.',
-    'You&apos;re the reason I check my phone so often – it&apos;s like a love lottery every time! 📱💖',
-    'I love you more than pizza... and that&apos;s saying a lot 🍕❤️!',
+    "You're the peanut butter to my jelly 🍞🍇. Without you, I'm incomplete! ❤️",
+    'I’m not a photographer, but I can totally picture us together forever 😘.',
+    "I’d be lost without you, probably on Google Maps, but still lost 😅. You're my GPS! 💖",
+    'If I had a star for every time you made me smile, I’d have a galaxy by now ✨.',
+    "You must be made of copper and tellurium because you're Cu-Te! 😏💘",
+    'I’m not a mathematician, but our love adds up perfectly 🔢❤️.',
+    'Even my dog loves you more than me, and that’s saying something 🐶💓.',
+    "i love the way you make me feel like i'm a part of you",
+    'If kisses were snowflakes, I’d send you a blizzard 🌨️💋.',
+    'You’re the reason I check my phone so often – it’s like a love lottery every time! 📱💖',
+    "I love you more than pizza... and that's saying a lot 🍕❤️!",
   ];
 
   const getRandom = (array: any) =>
     array[Math.floor(Math.random() * array.length)];
 
-  const [currentEmoji, setCurrentEmoji] = useState(() => getRandom(loveEmojis));
+  const [currentImage, setCurrentImage] = useState(() => getRandom(loveImages));
   const [currentMessage, setCurrentMessage] = useState(() =>
     getRandom(loveMessages)
   );
   const [key, setKey] = useState(0); // Unique key to force re-render
-  const [isEmojiVisible, setIsEmojiVisible] = useState(true); // State to manage emoji visibility
+  const [isImageVisible, setIsImageVisible] = useState(true); // State to manage image visibility
 
   const handleComplete = () => {
-    // Show confetti and reveal emoji
+    // Show confetti and reveal image
     confetti({
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
     });
 
-    // Hide emoji after 1 second and show the message
+    // Hide image after 1 second and show the message
     setTimeout(() => {
-      setIsEmojiVisible(false); // Hide emoji after 1 second
+      setIsImageVisible(false); // Hide image after 1 second
       setCurrentMessage(getRandom(loveMessages)); // Show new message
     }, 1000);
 
     // Reset the component (key) after displaying the message
     setTimeout(() => {
       setKey((prevKey) => prevKey + 1); // Reset the scratch component
-      setIsEmojiVisible(true); // Show the emoji again after resetting
-      setCurrentEmoji(getRandom(loveEmojis)); // Set new emoji for next scratch
-    }, 3000); // Wait 3 seconds before reset to allow message display
+      setIsImageVisible(true); // Show the image again after resetting
+      setCurrentImage(getRandom(loveImages)); // Set new image for next scratch
+    }, 2000); // Wait 3 seconds before reset to allow message display
   };
 
   return (
@@ -89,14 +118,20 @@ export const ScratchToRevealDemo = () => {
         onComplete={handleComplete}
         gradientColors={['#FAD02C', '#FF6F61', '#D4A5A5']}
       >
-        {isEmojiVisible ? (
-          <p className="text-7xl">{currentEmoji}</p> // Show emoji for 1 second
+        {isImageVisible ? (
+          <Image
+            src={currentImage}
+            alt="Love image"
+            className="w-full h-full object-cover"
+            width={1050}
+            height={1050}
+          />
         ) : null}
       </ScratchToReveal>
 
       {/* Show the message outside the scratch box */}
       <p className="text-lg text-center font-semibold text-gray-700 mt-4">
-        {currentMessage} {/* Show message after emoji disappears */}
+        {currentMessage} {/* Show message after image disappears */}
       </p>
     </div>
   );
