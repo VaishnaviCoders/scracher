@@ -5,9 +5,11 @@ import React, { useRef, useState } from 'react';
 import { Button } from './button';
 import { Progress } from '@/components/ui/progress';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const authenticator = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/auth');
+    const response = await fetch(`${baseUrl}/api/auth`);
 
     if (!response.ok) {
       const errorText = await response.text();
