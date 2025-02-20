@@ -95,6 +95,14 @@ export const ScratchToRevealDemo = () => {
     }, 2000); // Wait 3 seconds before reset to allow message display
   };
 
+  // const settings = {
+  //   width: 640,
+  //   height: 480,
+  //   image: 'image.jpg',
+  //   finishPercent: 50,
+  //   onComplete: () => console.log('The card is now clear!'),
+  // };
+
   return (
     <div className="flex flex-col justify-center items-center space-y-6 h-full">
       <div className="text-center font-medium text-gray-700">
@@ -107,7 +115,6 @@ export const ScratchToRevealDemo = () => {
           forever&quot; 💘.
         </p>
       </div>
-
       {/* ScratchToReveal Component with Dynamic Key */}
       <ScratchToReveal
         key={key} // Unique key ensures reset
@@ -128,7 +135,6 @@ export const ScratchToRevealDemo = () => {
           />
         ) : null}
       </ScratchToReveal>
-
       {/* Show the message outside the scratch box */}
       <p className="text-lg text-center font-semibold text-gray-700 mt-4">
         {currentMessage} {/* Show message after image disappears */}

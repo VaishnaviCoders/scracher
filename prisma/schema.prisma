@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model scratcherImage {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  imageUrls String[]
+}
+
+model BestShot {
+  id        Int      @id @default(autoincrement())
+  type      String // 'image' or 'video'
+  title     String
+  desc      String
+  url       String // URL for image or video
+  span      String
+  createdAt DateTime @default(now())
+}
