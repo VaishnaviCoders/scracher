@@ -12,6 +12,9 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+
+export const revalidate = 360;
+
 const mediaItems = [
   {
     id: 14,
